@@ -2,8 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"github.com/jackc/pgx/v5"
 	"github.com/joho/godotenv"
 	"log"
 	"os"
@@ -15,20 +13,8 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	conn, err := pgx.Connect(context.Background(), os.Getenv("DATABASE_URL"))
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
-		os.Exit(1)
-	}
-	defer conn.Close(context.Background())
+	pgInstance, _ = LoadDatabase(context.Background(), os.Getenv("DATABASE_URL"))
 
-	var walletAddress, nickname string
-
-	err = conn.QueryRow(context.Background(), "SELECT wallet_address, nickname FROM dbo.users;").Scan(&walletAddress, &nickname)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Unable to insert into the table: %v\n", err)
-		os.Exit(1)
-	}
-
-	fmt.Printf("Address: %v, Nick: %v\n", walletAddress, nickname)
+	pgInstance.Ping(context.Background())
+	pgInstance.CreateUser(context.Background(), "0xFD1093D8FC8d8596882549dC3aeC611a8F700390", "koehn", "chaezwav")
 }
