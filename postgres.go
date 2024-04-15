@@ -73,3 +73,7 @@ func (pg *Postgres) CreateUser(ctx context.Context, wa string, n string, cid str
 
 	return nil
 }
+
+// TODO DELETE, MODIFY, FETCH user function
+//* TODO More tables for foreign key relations
+//* I.E: Applications
