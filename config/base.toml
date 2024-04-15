@@ -1,8 +1,0 @@
-[chttp]
-port=5901
-
-		
-[csql]
-dialect="sqlite3"
-dsn="./cosmoAccounts.db"
-max_open_connections=1

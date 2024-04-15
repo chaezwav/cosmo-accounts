@@ -1,8 +1,1 @@
-.DS_Store
-.idea
-vendor/
-*.db
-*.out
-config/local.toml
-build/
-node_modules/
+
