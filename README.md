@@ -1,7 +1,7 @@
 
 # COSMO Accounts
 
-COSMO Accounts is a central account for websites or apps that wish to integrate it as an oauth method
+COSMO Accounts is a central account for websites or apps that wish to integrate it as an O'Auth method
 
 ## Dependencies
 
