@@ -1,8 +1,10 @@
-module cosmoAccounts
+module github.com/chaeyeonswav/cosmoAccounts
 
 go 1.21
 
 require (
+	github.com/gocopper/copper v0.7.2
+	github.com/google/wire v0.5.0
 	github.com/apple/pkl-go v0.6.0 // indirect
 	github.com/certifi/gocertifi v0.0.0-20210507211836-431795d63e8d // indirect
 	github.com/edgedb/edgedb-go v0.17.0 // indirect
