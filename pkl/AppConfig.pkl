@@ -1,0 +1,14 @@
+@go.Package { name = "github.com/chaeyeonswav/cosmoAccounts/appconfig" }
+module chaeyeonswav.cosmoaccounts.AppConfig
+
+import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.6.0#/go.pkl" 
+import "PostgresConfig.pkl"
+
+host: String = "localhost"
+
+port: UInt16 = 5051
+
+postgres: PostgresConfig
+
+version: Int = 0
+

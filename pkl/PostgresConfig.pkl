@@ -1,0 +1,22 @@
+@go.Package { name = "github.com/chaeyeonswav/cosmoAccounts/postgresconfig" }
+module chaeyeonswav.cosmoaccounts.PostgresConfig
+
+import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.6.0#/go.pkl"
+
+// example: postgresql://user:pass@host:port/cosmo_accounts
+
+class Auth {
+    username: String
+
+    password: String
+}
+
+enabled: Boolean = true
+
+host: String = "localhost"
+
+port: UInt16 = 5432
+
+database: String = "cosmo_accounts"
+
+auth: Auth?
