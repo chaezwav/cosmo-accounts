@@ -11,21 +11,10 @@ COSMO Accounts is a central account for websites or apps that wish to integrate 
 
 ## Run Locally
 
-Clone the project
-
 ```bash
   git clone https://github.com/chaeyeonswav/cosmoAccounts.git
-```
-
-Go to the project directory
-
-```bash
   cd cosmoAccounts
-```
 
-Install dependencies
-
-```bash
   go get
   go install github.com/apple/pkl-go/cmd/pkl-gen-go@latest
 
