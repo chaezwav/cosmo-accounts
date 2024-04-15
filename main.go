@@ -2,19 +2,31 @@ package main
 
 import (
 	"context"
-	"github.com/joho/godotenv"
+	"fmt"
 	"log"
-	"os"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		fmt.Errorf("failed to load .env files: %w", err)
 	}
 
-	pgInstance, _ = LoadDatabase(context.Background(), os.Getenv("DATABASE_URL"))
+	ctx := context.Background()
 
-	pgInstance.Ping(context.Background())
-	pgInstance.CreateUser(context.Background(), "0xFD1093D8FC8d8596882549dC3aeC611a8F700390", "koehn", "chaezwav")
+	database, err := LoadDatabase(ctx)
+
+	var result string
+	err = database.db.Execute(ctx, `
+	INSERT User {
+		wallet_address := 'hi'
+	}
+	`, &result)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(result)
 }
