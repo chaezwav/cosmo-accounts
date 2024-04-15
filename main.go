@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 )
 
 func main() {
@@ -11,4 +12,8 @@ func main() {
 
 	// database.Ping(ctx)
 	pg.CreateUser(ctx, `a`, `b`, `c`)
+
+	result, _ := pg.GetUser(ctx, `a`)
+
+	fmt.Println(result)
 }
