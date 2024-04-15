@@ -7,7 +7,8 @@ import (
 func main() {
 	ctx := context.Background()
 
-	database, _ := LoadDatabase(ctx)
+	pg, _ := LoadDatabase(ctx)
 
-	database.CreateUser(ctx, `hi`, `hi`, `hi`)
+	// database.Ping(ctx)
+	pg.CreateUser(ctx, `a`, `b`, `c`)
 }
