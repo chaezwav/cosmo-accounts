@@ -1,5 +1,5 @@
-@go.Package { name = "github.com/chaeyeonswav/cosmo-accounts/appconfig" }
-module chaeyeonswav.cosmoaccounts.AppConfig
+@go.Package { name = "github.com/chaeyeonswav/cosmo-accounts/gen/appconfig" }
+module chaeyeonswav.cosmo_accounts.AppConfig
 
 import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.6.0#/go.pkl" 
 import "PostgresConfig.pkl"

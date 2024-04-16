@@ -1,4 +1,4 @@
-package main
+package postgresql
 
 import (
 	"context"
@@ -6,7 +6,7 @@ import (
 
 	"github.com/jackc/pgx/v5/pgxpool"
 
-	"github.com/chaeyeonswav/cosmo-accounts/appconfig"
+	"github.com/chaeyeonswav/cosmo-accounts/tools/pkl"
 )
 
 type Postgres struct {
@@ -22,11 +22,7 @@ type User struct {
 var pgInstance *Postgres
 
 func LoadDatabase(ctx context.Context) (*Postgres, error) {
-
-	cfg, err := appconfig.LoadFromPath(context.Background(), "pkl/dev/config.pkl")
-	if err != nil {
-		panic(err)
-	}
+	cfg, _ := pkl.LoadFromPath(ctx, "config/pkl/dev/config.pkl")
 
 	cfPg := cfg.Postgres
 	s := fmt.Sprintf(`postgresql://%v:%v@%v:%v/%v`, cfPg.Auth.Username, cfPg.Auth.Password, cfPg.Host, cfPg.Port, cfPg.Database)
@@ -101,6 +97,10 @@ func (pg *Postgres) GetUser(ctx context.Context, u string) (User, error) {
 	}
 
 	return User{Address: u, Nickname: nick, ID: id}, nil
+}
+
+func (pg *Postgres) Close() {
+	pg.db.Close()
 }
 
 //* TODO More tables for foreign key relations

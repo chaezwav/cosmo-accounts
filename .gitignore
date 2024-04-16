@@ -1,3 +1,4 @@
 .vscode
-pkl/dev
-*config
+config/pkl/dev
+config/*
+!config/pkl

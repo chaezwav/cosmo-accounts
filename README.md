@@ -17,7 +17,7 @@ COSMO Accounts is a central account for websites or apps that wish to integrate 
 
   go install github.com/apple/pkl-go/cmd/pkl-gen-go@latest
 
-  pkl-gen-go pkl/AppConfig.pkl --base-path github.com/chaeyeonswav/cosmo-accounts
+  pkl-gen-go config/pkl/AppConfig.pkl --base-path github.com/chaeyeonswav/cosmo-accounts/
 ```
 
 Start the server
