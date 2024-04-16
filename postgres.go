@@ -14,9 +14,9 @@ type Postgres struct {
 }
 
 type User struct {
-	wallet_address string
-	nickname       string
-	cosmo_id       string
+	Address  string
+	Nickname string
+	ID       string
 }
 
 var pgInstance *Postgres
@@ -100,9 +100,8 @@ func (pg *Postgres) GetUser(ctx context.Context, u string) (User, error) {
 		fmt.Printf("Got user: %v\n", u)
 	}
 
-	return User{wallet_address: u, nickname: nick, cosmo_id: id}, nil
+	return User{Address: u, Nickname: nick, ID: id}, nil
 }
 
-// TODO FETCH MANY user function
 //* TODO More tables for foreign key relations
 //* I.E: Applications

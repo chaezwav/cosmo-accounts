@@ -3,7 +3,7 @@
 
 COSMO Accounts is a central account for websites or apps that wish to integrate it as an O'Auth method
 
-## Dependencies
+## Prerequisites
 
 * [Pkl v0.25.3](https://pkl-lang.org/)
 * [Go v1.22.2](https://go.dev/learn/)
