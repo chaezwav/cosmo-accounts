@@ -1,4 +1,4 @@
-@go.Package { name = "github.com/chaeyeonswav/cosmoAccounts/postgresconfig" }
+@go.Package { name = "github.com/chaeyeonswav/cosmo-accounts/postgresconfig" }
 module chaeyeonswav.cosmoaccounts.PostgresConfig
 
 import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.6.0#/go.pkl"
