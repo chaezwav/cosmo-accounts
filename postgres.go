@@ -6,7 +6,7 @@ import (
 
 	"github.com/jackc/pgx/v5/pgxpool"
 
-	"github.com/chaeyeonswav/cosmoAccounts/appconfig"
+	"github.com/chaeyeonswav/cosmo-accounts/appconfig"
 )
 
 type Postgres struct {
