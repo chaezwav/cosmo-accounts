@@ -1,4 +1,4 @@
-module github.com/chaeyeonswav/cosmoAccounts
+module github.com/chaeyeonswav/cosmo-accounts
 
 go 1.22.2
 
