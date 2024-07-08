@@ -3,7 +3,7 @@ module github.com/chaeyeonswav/cosmo-accounts
 go 1.22.2
 
 require (
-	github.com/apple/pkl-go v0.6.0
+	github.com/apple/pkl-go v0.8.0
 	github.com/jackc/pgx/v5 v5.5.5
 )
 
